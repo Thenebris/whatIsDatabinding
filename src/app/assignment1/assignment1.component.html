@@ -1,0 +1,13 @@
+<h1 style="padding-top:20px">Assignment for Databinding</h1>
+
+<input type="text" 
+class="form-control" 
+[(ngModel)]="username">
+
+<p> {{ username }} </p>
+
+<button 
+[disabled]="!username" 
+(click)="resetUser()" 
+class="btn btn-primary"
+>empty Input-field</button>

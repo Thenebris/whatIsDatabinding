@@ -1,0 +1,34 @@
+
+<!--____String-Interpolation______--><hr><h3>String-Interpolation</h3>
+
+<p>Server with ID {{ serverId }} is {{ getServerStatus() }} </p>
+
+<!--____Property-Binding________--><hr><h3>Property-Binding</h3>
+
+<button [disabled]="!allowNewServer" class="btn btn-primary">Add Server</button>
+<p [innerText]="allowNewServer"></p>
+
+<!--____Event-Binding___________--><hr><h3>Event-Binding</h3>
+
+<button (click)="createHost()"
+class="btn btn-primary">Add Host</button>
+<p>{{ hostCreationStatus }}</p>
+
+<input type="text" 
+class="form-control" 
+(input)="onUpdateHostName($event)">
+
+<p> {{ hostName }} </p>
+
+<!--____Two-Way-Databinding_______--><hr><h3>Two-Way-Databinding</h3>
+<!--requires to import FormsModule to the imports[] in AppModule.
+    You then also need to add the import 
+    from @angular/forms  in the app.module.ts file:
+    import { FormsModule } from '@angular/forms'; 
+-->
+
+<input type="text" 
+class="form-control" 
+[(ngModel)]="proxyName">
+
+<p> {{ proxyName }} </p>
